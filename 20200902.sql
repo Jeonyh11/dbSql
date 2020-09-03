@@ -168,7 +168,7 @@ sql ||, CONCAT 함수 ==> 결합연산
     USER_TABLES : 오라클에서 관리하는 테이블(뷰)
                 접속한 사용자가 보유하고 있는 테이블 정보를 관리
                 
-    SELECT CONCAT('SELECT * FROM ', table_name || ';' ) QUERY
+    SELECT  CONCAT('SELECT * FROM ', table_name || ';' ) QUERY
     FROM user_tables;
     
     별첨은 아무 것도 안붙이거나 "" 을쓴다
