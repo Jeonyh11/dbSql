@@ -68,7 +68,7 @@ WHERE hiredate >= TO_DATE('1982/01/01','yyyy/mm/dd');                // yyyy-mm-
 
  - BETWEEN AND 연산자
  1. WHERE 비교대상 BETWEEN 시작값 AND 종료값;
- 2. 비교대상 >= 시작값, 비교대상 <= 종료값
+ 2. 비교대상 >= 시작값 AND 비교대상 <= 종료값
 비교대상의 값이 시작값과 종료값 사이에 있을 때 참(true)으로 인식
 비교대상 >= 시작값 AND 비교대상 <= 종료값
 
