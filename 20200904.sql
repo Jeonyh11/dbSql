@@ -162,9 +162,10 @@ WHERE job = ('SALESMAN') OR empno LIKE '78%';
 // WHERE 13
 SELECT*
 FROM emp
-WHERE job = ('SALESMAN') OR empno BETWEEN 7800 AND 7899 
+WHERE job = ('SALESMAN')
+                OR (empno BETWEEN 7800 AND 7899 
                 OR empno = 78 
-                OR empno BETWEEN 780 AND 789;
+                OR empno BETWEEN 780 AND 789);
 
 // WHERE 14
 SELECT*
@@ -289,7 +290,7 @@ WHERE 글번호 BETWEEN 46 AND 60;
  ORDER BY ename;
  
  정렬을 먼저 하고, 정렬된 결과에 ROWNNUM을 적용
- ==> INLINE-VIEW
+ ==> INLINE-VIEW > ( )
     SELECT 결과를 하나의 테이블 처럼 만들어 준다.
     
 사원정보를 페이징 처리

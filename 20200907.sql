@@ -159,10 +159,10 @@ sql : nsl 포맷에 설정된 문자열 형식을 따르거나
         TO_DATE 함수를 이용하여 명확하게 명시
         TO_DATE ('날짜 문자열', '날짜 문자열 형식')
         
-    SELECT TO_DATE('2019/12/31', 'yyyy/mm/dd') LASTDAY
-           TO_DATE('2019/12/31', 'yyyy/mm/dd')-5 LASTDAY BEFORE5,
+    SELECT TO_DATE('2019/12/31', 'yyyy/mm/dd') LASTDAY,
+           TO_DATE('2019/12/31', 'yyyy/mm/dd') -5 LASTDAY_BEFORE5,
            SYSDATE NOW,
-           SYSDATE -3 NOW_BEFORE3,
+           SYSDATE -3 NOW_BEFORE3
            FROM dual;
 
 
