@@ -145,7 +145,6 @@ SELECT userid,usernm,reg_dt,
          MOD(TO_CHAR(SYSDATE, 'yyyy'),2),
          '건강검진 대상자',
          '건강검진 비대상') contact_to_doctor2
-        )
 FROM users;
 
 
