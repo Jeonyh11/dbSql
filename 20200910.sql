@@ -245,4 +245,50 @@ WHERE sal BETWEEN losal AND hisal;
 SELECT empno, ename, sal, grade
 FROM emp JOIN salgrade ON ( sal BETWEEN losal AND hisal);
 
+-------grp5------------
+SELECT TO_CHAR(hiredate,'yyyy') hire_yyyy, COUNT(*) cnt
+FROM emp
+GROUP BY  TO_CHAR(hiredate,'yyyy');
+
+------grp6--------------
+SELECT  COUNT(*) cnt
+FROM dept;
+
+-----grp7---------------
+SELECT  COUNT(COUNT(*)) cnt
+FROM emp
+GROUP BY deptno;
+
+
+--------join0-----------
+
+SELECT emp.empno, emp.ename, emp.deptno, dept.dname
+FROM emp JOIN dept ON ( emp.deptno = dept.deptno)
+ORDER BY emp.deptno ASC ;
+
+
+-------join0_1------------
+
+SELECT emp.empno, emp.ename, emp.deptno, dept.dname
+FROM emp JOIN dept ON ( emp.deptno = dept.deptno)
+WHERE emp.deptno LIKE 10 OR emp.deptno LIKE 30;
+
+------------join0_2-----------------
+SELECT emp.empno, emp.ename, emp.sal, emp.deptno, dept.dname
+FROM emp JOIN dept ON ( emp.deptno = dept.deptno)
+WHERE sal >=2500
+ORDER BY emp.deptno ASC ;
+
+----------join0_3-----------------
+SELECT emp.empno, emp.ename, emp.sal, emp.deptno, dept.dname
+FROM emp JOIN dept ON ( emp.deptno = dept.deptno)
+WHERE   sal >=2500 AND empno > 7600
+ORDER BY emp.deptno ASC ;
+
+----------join0_4-----------------
+SELECT emp.empno, emp.ename, emp.sal, emp.deptno, dept.dname
+FROM emp JOIN dept ON ( emp.deptno = dept.deptno)
+WHERE   sal >2500 AND empno > 7600 AND dname IN ('RESEARCH')
+ORDER BY emp.empno DESC;
+
 
