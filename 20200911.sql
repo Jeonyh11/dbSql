@@ -92,4 +92,13 @@ FROM member, cart, prod
 WHERE member.mem_id = cart.cart_member
 AND cart.cart_prod = prod.prod_id;
 
+---------- ANSI VERSION ------------------
+테이블 JOIN 테이블 ON ()
+         JOIN 테이블 ON ()
+         
+SELECT member.mem_id, member.mem_name, prod.prod_id, prod.prod_name, cart.cart_qty
+FROM member JOIN cart ON (member.mem_id = cart.cart_member)
+                    JOIN prod ON (member.mem_id = cart.cart_member)
+WHERE member.mem_id = cart.cart_member
+AND cart.cart_prod = prod.prod_id;
 
