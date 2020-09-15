@@ -24,6 +24,10 @@ SELECT deptno, MIN(ename),COUNT(*), MIN(sal), MAX(sal), SUM(sal), AVG(sal)
 FROM emp
 GROUP BY deptno;
 
+SELECT pid, pnm, SUM(cycle.cnt)
+FROM cycle
+GROUP BY pid;
+
 전체 직원(모든 행을 대상으로)중에 가장 많은 급여를 받는 사람의 값
  :전체 행을 대상으로 
  
@@ -130,10 +134,7 @@ FROM emp
 GROUP BY deptno;
 
 SELECT 
-DECODE (deptno, 10, 'ACCOUNTING',
-                    20, 'RESEARCH',
-                    30, 'SALES',
-                    40, 'OPERATIONS')dname,
+
 
          MAX(sal), MIN(sal),
         ROUND(AVG(sal),+2) AVG_SAL,

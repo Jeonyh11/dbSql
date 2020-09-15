@@ -44,6 +44,25 @@ SELECT customer.cid, customer.cnm, cycle.pid, product.pnm, cycle.day, cycle.cnt
 FROM customer JOIN cycle ON(customer.cid = cycle.cid)  
                     JOIN product ON(cycle.pid = product.pid)
 WHERE cnm IN ('brown', 'sally');
+
+------------- 226page --------------join6
+SELECT customer.cid, customer.cnm, cycle.pid, product.pnm,SUM(cycle.cnt)cnt
+  FROM customer JOIN cycle ON(customer.cid = cycle.cid)  
+                    JOIN product ON(cycle.pid = product.pid)
+GROUP BY customer.cid, customer.cnm, cycle.pid, product.pnm;
+
+-----------227page --------------join7
+SELECT cycle.pid, product.pnm, SUM(cycle.cnt)cnt
+FROM  cycle,  product 
+WHERE cycle.pid = product.pid
+GROUP BY cycle.pid, product.pnm;
+
+fdsfas
+SELECT*
+FROM employees;
+
+
+
 SELECT*
 FROM TABLE(dbms_xplan.display);
 -- SQL : 실행에 대한 순서가 없다. 조인할 테이블에 대해서 FROM 절에 기술한
@@ -127,8 +146,12 @@ AND b. BUY_DATE(+) = TO_DATE('2005/01/25', 'yyyy/mm/dd');
 
 -----------ANSI VERSION -------------------
 SELECT b.buy_date, b.buy_prod, p.prod_id, p.prod_name, b.buy_qty
-FROM buyprod b RIGHT OUTER JOIN prod p
+FROM buyprod b LEFT OUTER JOIN prod p
 ON ( b.buy_prod = p.prod_id AND b. BUY_DATE = TO_DATE('2005/01/25', 'yyyy/mm/dd') );
+
+SELECT b.buy_date, b.buy_prod, p.prod_id, p.prod_name, b.buy_qty
+FROM buyprod b, prod p;
+
 
 -----------My ----------------------
 SELECT b.buy_date, b.buy_prod, p.prod_id, p.prod_name, b.buy_qty
