@@ -1,0 +1,9 @@
+
+
+SELECT*
+FROM KING. v_emp;
+
+CREATE SYNONYM v_emp FOR KING.v_emp;
+
+SELECT*
+FROM v_emp;
